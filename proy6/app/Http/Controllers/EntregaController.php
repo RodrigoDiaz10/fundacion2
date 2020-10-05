@@ -21,22 +21,24 @@ class EntregaController extends Controller
        public function postEntrega(Request $request){
            $data = $request->json()->all();
            $entrega = Entrega::create([
-               'titulo'=> $data['titulo'],
-               'foto'=> $data['foto'],
+               'nombres'=> $data['nombres'],
+               'fechaEntrega'=> $data['fechaEntrega'],
                'descripcion'=> $data['descripcion'],
+               'novedades'=> $data['novedades'],
                'estado'=> $data['estado'],
            ]);
-           return response()->json($entrega, 201);
+           return response()->json($entrega, 201); 
        }
        /* Funcion para actualizar datos */
        public function putEntrega(Request $request){
            $data = $request->json()->all();
            $entrega = Entrega::findOrFail($data['id']);
            $response = $entrega->update([
-               'titulo'=> $data['titulo'],
-               'foto'=> $data['foto'],
-               'descripcion'=> $data['descripcion'],
-               'estado'=> $data['estado'],
+            'nombres'=> $data['nombres'],
+            'fechaEntrega'=> $data['fechaEntrega'],
+            'descripcion'=> $data['descripcion'],
+            'novedades'=> $data['novedades'],
+            'estado'=> $data['estado']
            ]);
            return response()->json($entrega, 201);
        }

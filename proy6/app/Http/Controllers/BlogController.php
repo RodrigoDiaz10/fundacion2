@@ -30,6 +30,7 @@ class BlogController extends Controller
             'body'=> $data['body'],
             //'descripcion'=> $data['descripcion'],
             'estado'=> $data['estado'],
+            
         ]);
         return response()->json($blog, 201);
     }

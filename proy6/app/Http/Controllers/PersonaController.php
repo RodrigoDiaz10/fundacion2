@@ -20,9 +20,17 @@ class PersonaController extends Controller
     public function postPersona(Request $request){
         $data = $request->json()->all();
         $persona = Persona::create([
-            'titulo'=> $data['titulo'],
-            'foto'=> $data['foto'],
-            'descripcion'=> $data['descripcion'],
+            'nombres'=> $data['nombres'],
+            'apellidos'=> $data['apellidos'],
+            'fechaNac'=> $data['fechaNac'],
+            'edad'=> $data['edad'],
+            'cedula'=> $data['cedula'],
+            'nombresMama'=> $data['nombresMama'],
+            'nombresPapa'=> $data['nombresPapa'],
+            'estudiando'=> $data['estudiando'],
+            'nombreEscuela'=> $data['nombreEscuela'],
+            'direccion'=> $data['direccion'],
+            'imagen'=> $data['imagen'],
             'estado'=> $data['estado'],
         ]);
         return response()->json($persona, 201);
@@ -32,9 +40,17 @@ class PersonaController extends Controller
         $data = $request->json()->all();
         $persona = Persona::findOrFail($data['id']);
         $response = $persona->update([
-            'titulo'=> $data['titulo'],
-            'foto'=> $data['foto'],
-            'descripcion'=> $data['descripcion'],
+            'nombres'=> $data['nombres'],
+            'apellidos'=> $data['apellidos'],
+            'fechaNac'=> $data['fechaNac'],
+            'edad'=> $data['edad'],
+            'cedula'=> $data['cedula'],
+            'nombresMama'=> $data['nombresMama'],
+            'nombresPapa'=> $data['nombresPapa'],
+            'estudiando'=> $data['estudiando'],
+            'nombreEscuela'=> $data['nombreEscuela'],
+            'direccion'=> $data['direccion'],
+            'imagen'=> $data['imagen'],
             'estado'=> $data['estado'],
         ]);
         return response()->json($persona, 201);

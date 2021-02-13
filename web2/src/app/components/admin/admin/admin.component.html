@@ -1,0 +1,282 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Fundación Semillas de Esperanza</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="gallery.html" style="font-size: 25px;">Donaaskjdhasdciones</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="contact.html" style="font-size: 25px;">Historias</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="blog.html" style="font-size: 25px;">inicio de Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- galery-->
+<div id="portfolio">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="./assets/img/hero-slider/escuela.jpg">
+                    <img class="img-fluid" src="./assets/img/hero-slider/escuela.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="./assets/img/hero-slider/escuelas.jpg">
+                    <img class="img-fluid" src="./assets/img/hero-slider/escuelas.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="./assets/img/hero-slider/escuela.jpg">
+                    <img class="img-fluid" src="./assets/img/hero-slider/escuela.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="./assets/img/hero-slider/escuela.jpg">
+                    <img class="img-fluid" src="./assets/img/hero-slider/escuela.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="./assets/img/hero-slider/escuela.jpg">
+                    <img class="img-fluid" src="./assets/img/hero-slider/escuela.jpg" alt="" />
+                    <div class="portfolio-box-caption p-3">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-7">
+                <a class="portfolio-box" href="./assets/img/hero-slider/campus.jpg">
+                    <img class="img-fluid" src="./assets/img/hero-slider/campus.jpg" alt="" style="image-resolution:cover ;" />
+                    <div class="portfolio-box-caption p-3">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<!-- galery end-->
+
+<script>
+    /*  ---------------------------------------------------
+  Template Name: Activitar
+  Description:  Activitar Fitness HTML Template
+  Author: Colorlib
+  Author URI: https://colorlib.com
+  Version: 1.0
+  Created: Colorlib
+---------------------------------------------------------  */
+
+'use strict';
+
+(function ($) {
+ 
+  
+
+
+    // Smooth scrolling using jQuery easing
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: (target.offset().top - 72)
+          }, 1000, "easeInOutExpo");
+          return false;
+        }
+      }
+    });
+  
+    // Closes responsive menu when a scroll trigger link is clicked
+    $('.js-scroll-trigger').click(function() {
+      $('.navbar-collapse').collapse('hide');
+    });
+  
+    // Activate scrollspy to add active class to navbar items on scroll
+    $('body').scrollspy({
+      target: '#mainNav',
+      offset: 75
+    });
+  
+    // Collapse Navbar
+    var navbarCollapse = function() {
+      if ($("#mainNav").offset().top > 100) {
+        $("#mainNav").addClass("navbar-scrolled");
+      } else {
+        $("#mainNav").removeClass("navbar-scrolled");
+      }
+    };
+    // Collapse now if page is not at top
+    navbarCollapse();
+    // Collapse the navbar when page is scrolled
+    $(window).scroll(navbarCollapse);
+  
+    // Magnific popup calls
+    $('#portfolio').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-img-mobile',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0, 1]
+      },
+      image: {
+        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+      }
+    });
+
+    /*------------------
+        Preloader
+    --------------------*/
+    $(window).on('load', function () {
+        $(".loader").fadeOut();
+        $("#preloder").delay(200).fadeOut("slow");
+
+        /*------------------
+            Gallery filter
+        --------------------*/
+        $('.gallery-controls ul li').on('click', function() {
+            $('.gallery-controls ul li').removeClass('active');
+            $(this).addClass('active');
+        });
+        if($('.gallery-filter').length > 0 ) {
+            var containerEl = document.querySelector('.gallery-filter');
+            var mixer = mixitup(containerEl);
+        }
+
+        $('.blog-gird').masonry({
+			itemSelector: '.grid-item',
+			columnWidth: '.grid-sizer',
+		});
+
+    });
+
+    /*------------------
+        Background Set
+    --------------------*/
+    $('.set-bg').each(function () {
+        var bg = $(this).data('setbg');
+        $(this).css('background-image', 'url(' + bg + ')');
+    });
+
+    /*------------------
+		Navigation
+	--------------------*/
+    $(".mobile-menu").slicknav({
+        prependTo: '#mobile-menu-wrap',
+        allowParentLinks: true
+    });
+
+    /*------------------
+		Menu Hover
+	--------------------*/
+    $(".header-section .nav-menu .mainmenu ul li").on('mousehover', function() {
+        $(this).addClass('active');
+    });
+    $(".header-section .nav-menu .mainmenu ul li").on('mouseleave', function() {
+        $('.header-section .nav-menu .mainmenu ul li').removeClass('active');
+    });
+
+    /*------------------
+        Carousel Slider
+    --------------------*/
+    $(".hero-items").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        items: 1,
+        dots: true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        navText: ['<i class="arrow_carrot-left"></i>', '<i class="arrow_carrot-right"></i>'],
+        smartSpeed: 1200,
+        autoHeight: false,
+    });
+
+    /*------------------
+        Testimonial Slider
+    --------------------*/
+   $(".testimonial-slider").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        items: 1,
+        dots: true,
+        navText: ['<i class="arrow_carrot-left"></i>', '<i class="arrow_carrot-right"></i>'],
+        smartSpeed: 1200,
+        autoHeight: false,
+        autoplay: true,
+    });
+
+    /*------------------
+        Magnific Popup
+    --------------------*/
+    $('.video-popup').magnificPopup({
+        type: 'iframe'
+    });
+
+    $('.image-popup').magnificPopup({
+        type: 'image'
+    });
+
+    /*------------------
+        Magnific Popup
+    --------------------*/
+    $('.show-result-select').niceSelect();
+
+    /*------------------
+       Timetable Filter
+    --------------------*/
+    $('.timetable-controls ul li').on('click', function() {
+        var tsfilter = $(this).data('tsfilter');
+        $('.timetable-controls ul li').removeClass('active');
+        $(this).addClass('active');
+        
+        if(tsfilter == 'all') {
+            $('.classtime-table').removeClass('filtering');
+            $('.ts-item').removeClass('show');
+        } else {
+            $('.classtime-table').addClass('filtering');
+        }
+        $('.ts-item').each(function(){
+            $(this).removeClass('show');
+            if($(this).data('tsmeta') == tsfilter) {
+                $(this).addClass('show');
+            }
+        });
+    });
+})(jQuery);
+</script>
+
+<script>
+    
+</script>
+
+
+
+
+
+

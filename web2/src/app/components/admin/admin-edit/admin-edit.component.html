@@ -1,0 +1,141 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Fundación Semillas de Esperanza</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="" style="font-size: 25px;">Donaciones</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="contact.html" style="font-size: 25px;">Historias</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="blog.html" style="font-size: 25px;">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="card" style="padding-top: 5%;">
+    <div class="card-body">
+        <h3 class="card-title" style="text-align: center; padding-bottom: 5%;">Ficha de Datos</h3>
+
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+
+                <form class="col col-lg-6 ">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Nombres</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nombres">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastname">Apellidos</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Apellidos">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="birth">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="birth" placeholder="Fecha de Nacimiento">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ci">Cédula</label>
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Cédula">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addres">Direccion de domicilio</label>
+                        <input type="text" class="form-control" id="addres" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="namem">Nombres de la Madre</label>
+                            <input type="text" class="form-control" id="namem" placeholder="Nombres Madre">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="namef">Nombres del Padre</label>
+                            <input type="text" class="form-control" id="namef" placeholder="Nombres Padre">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="value">Está Estudiando?</label>
+                            <select id="value" [(ngModel)]="seleccionado" class="form-control">
+                                <option >Opciones</option>
+                                <option value="si">Sí</option>
+                                <option value="no">No</option>
+                            </select>{{seleccionado}} <!--TODO aparecer cuando escoga sí-->
+                        </div>
+                        <div  class="form-group col-md-6">
+                            <label for="escuela">Nombre de la Escuela</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div> 
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input accept="application/image/png,image/jpeg" #foto required id="fotos" multiple type="file">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+ <!-- Footer Section Begin -->
+ <footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-1">
+                <div class="footer-logo-item">
+                    <a class="navbar-brand js-scroll-trigger" style="color: white;">Fundación Semillas de Esperanza</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos quos autem aspernatur, dignissimos re.</p>
+                    <div class="social-links"> 
+                        <h6>SÍGUENOS EN </h6>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-5">
+                <div class="footer-widget">
+                    <h5>MÁS INFORMACIÓN</h5>
+                    <ul class="footer-info">
+                        <li>
+                            <i class="fa fa-phone" style="color: rgb(0, 110, 255);"></i>
+                            <span>Celular</span>
+                            099 839 1982
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o"style="color: rgb(0, 110, 255);"></i>
+                            <span>Email:</span>
+                           fundacionsemillas.ec@hotmail.com
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker"style="color: rgb(0, 110, 255);"></i>
+                            <span>Address</span>
+                            Iris Watson, Box 283 8562, NY
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="ct-inside"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+

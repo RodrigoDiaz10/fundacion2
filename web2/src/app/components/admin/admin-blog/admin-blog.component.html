@@ -16,7 +16,7 @@
 
 <div class="card" style="padding-top: 5%;">
     <div class="card-body">
-      <h3 class="card-title" style="text-align: center;">Tabla Administrativa</h3>
+      <h3 class="card-title" style="text-align: center;">Tabla Entrada de Blogs</h3>
         <button type="button" class="btn btn-outline-primary col-md-4 offset-md-4">Agregar nuevo</button>
       <br><br>
         <table class="table">
@@ -24,17 +24,17 @@
             <thead class="thead-dark">
               <tr  >
                 <th scope="col">#</th>
-                <th scope="col">Nombres</th>
-                <th scope="col">Apellidos</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Fecha</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let person of persons;  let id=index">
+              <tr *ngFor="let blog of blogs;  let id=index">
                 <th scope="row">{{id+1}}</th>
-                <td>{{person.name}}</td> 
-                <td>{{person.lastname}}</td>
+                <td>{{blog.title}}</td> 
+                <td>{{blog.date}}</td>
                 <td>
                   <button type="button" class="btn btn-outline-primary">
                     <i class="far fa-edit"></i>

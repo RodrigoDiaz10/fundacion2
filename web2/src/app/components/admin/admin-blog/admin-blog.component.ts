@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Blog } from 'src/app/models/blog';
+import { BlogService } from 'src/app/services/blog.service';
 
 
 
@@ -8,13 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-blog.component.css']
 })
 export class AdminBlogComponent implements OnInit {
+  public blogs = [];
   
 
-  constructor() { }
+  constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
+    this.getallblog();
   }
 
+  async getallblog(){
+    //traer el bog
+    this.blogs= await this.blogService.obtenerBlog();
+ }
 
 
 

@@ -2,62 +2,132 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-use App\Blog;
 
 class BlogController extends Controller
 {
-    public function blog(){
-        return view('web.post');
-    }
-
-    /* Funcion para obtener los datos del blog*/
-    public function getBlog(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $blog = Blog::get();
-        return response()->json($blog, 200);
-    }
-    /* Funcion para enviar los datos*/ 
-    public function postBlog(Request $request){
-        $data = $request->json()->all();
-        $blog = Blog::create([
-            'user_id'=> $data['user_id'],
-            'titulo'=> $data['titulo'],
-            'foto'=> $data['foto'],
-            'slug'=> $data['slug'],
-            'excerpt'=> $data['excerpt'],
-            'body'=> $data['body'],
-            //'descripcion'=> $data['descripcion'],
-            'estado'=> $data['estado'],
-            
-        ]);
-        return response()->json($blog, 201);
-    }
-    /* Funcion para actualizar datos */
-    public function putBlog(Request $request){
-        $data = $request->json()->all();
-        $blog = Blog::findOrFail($data['id']);
-        $response = $blog->update([
-            //'user_id'=> $data['user_id'],
-            'titulo'=> $data['titulo'],
-            'foto'=> $data['foto'],
-            'slug'=> $data['slug'],
-            'excerpt'=> $data['excerpt'],
-            'body'=> $data['body'],
-            //'descripcion'=> $data['descripcion'],
-            'estado'=> $data['estado'],
-        ]);
-        return response()->json($blog, 201);
+        return response()->json([
+            'error' => false,
+            'blog'  => blog::all(),
+        ], 200);
+        }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+    //
     }
 
-    /* Funcion para borrar datos    TERMINAR    */
-    public function deleteBlog(Request $request){
-        $data = $request->json()->all();
-        $blog = Blog::findOrFail($data['id']);
-        $response = $blog->update([
-            'estado'=> $data['estado'],
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title'=> 'required',
+            'description'=> 'required',
+            'image'=> 'required',
+            'link'=> 'required',
         ]);
-        return response()->json($blog, 201);
+
+        $blog = new blog;
+        $blog->title = $request->input('title');
+        $blog->description = $request->input('description');
+        $blog->image = $request->input('image');
+        $blog->link = $request->input('link');
+      
+
+        $blog->save();
+        return response()->json([
+                'error'=> false,
+                'blog' => $blog
+        ], 201);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\blog  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $blog = blog::findOrFail($id);
+        return response()->json([
+            'data' =>[
+                'blog' => $blog
+            ]
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\blog  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(blog $blog)
+    {
+       //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\blog  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,[
+            'title'=> 'required',
+            'description'=> 'required',
+            'image'=> 'required',
+            'link'=> 'required',
+        ]);
+        $blog = blog::find($id);
+
+        $blog->title = $request->input('title');
+        $blog->description = $request->input('description');
+        $blog->image = $request->input('image');
+        $blog->link = $request->input('link');
+        $blog->save();
+        return response()->json([
+                'error'=> false,
+                'blog' => $blog
+        ], 201);
+
+        
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\blog  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(blog $blog,$id)
+    {
+        $blog = blog::findOrFail($id);
+        $blog->delete();
+        return response()->json(['message'=>'Blog quitado', 'Blog'=>$blog],200);
     }
 }

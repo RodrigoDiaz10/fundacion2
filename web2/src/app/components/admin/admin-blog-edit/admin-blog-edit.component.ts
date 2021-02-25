@@ -13,6 +13,14 @@ export class AdminBlogEditComponent implements OnInit {
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
+
+    this.getallblog();
+
+  }
+
+   async getallblog(){
+     //traer el bog
+     await this.blogService.obtenerBlog();
   }
 
   async guardar() {

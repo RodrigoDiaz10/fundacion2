@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/admin', pathMatch: 'full' },
+/*  { path: '', redirectTo: '/admin', pathMatch: 'full' },
   {
     path: '**',
     component: InicioComponent
@@ -13,7 +13,7 @@ const routes: Routes = [
   {
       path: 'admin-blog',
       component: AdminBlogComponent
-  }
+  }*/
 ];
 
 @NgModule({

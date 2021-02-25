@@ -14,8 +14,7 @@ export class HttpService {
       headers: {
         "Content-Type": "application/json",
       },
-      method: "POST",
-      credentials: "include",
+      method: "POST"
     });
     return await respuestaRaw.json();
   }
@@ -31,14 +30,14 @@ export class HttpService {
   async get(ruta: string) {
     // Por defecto se hace una petición GET
     const respuestaRaw = await fetch(this.rutaServidor + ruta, {
-      credentials: "include",
+      //credentials: "include",
     });
     return await respuestaRaw.json();
   }
 
   async delete(ruta: string) {
     const respuestaRaw = await fetch(this.rutaServidor + ruta, {
-      credentials: "include",
+      //credentials: "include",
       method: "DELETE",
     });
     return await respuestaRaw.json();
@@ -51,7 +50,7 @@ export class HttpService {
         "Content-Type": "application/json",
       },
       method: "PUT",
-      credentials: "include",
+      //credentials: "include",
     });
     return await respuestaRaw.json();
   }

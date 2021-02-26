@@ -13,6 +13,7 @@ import { AdminBlogComponent } from './components/admin/admin-blog/admin-blog.com
 import { AdminBlogEditComponent } from './components/admin/admin-blog-edit/admin-blog-edit.component';
 import { BlogComponent } from './components/blog/blog.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -32,7 +33,8 @@ import { BlogComponent } from './components/blog/blog.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule  
+    ReactiveFormsModule,
+    HttpClientModule,  
   ],
   providers: [{provide: APP_BASE_HREF, useValue:''}],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
-import { Person } from './../components/admin/admin/admin.component';
+
 import { Injectable } from '@angular/core';
+import { Person } from '../models/person';
 import { HttpService } from './http.service';
 
 @Injectable({
@@ -19,6 +20,10 @@ export class PersonService {
 
   public async obtenerPerson() {
     return await this.http.get("/api/person");
+  }
+
+  public async obtenerPorId(idPerson){
+    return await this.http.get("/api/person/?id=".concat(idPerson));
   }
 
   public async modificarPerson(person: Person) {

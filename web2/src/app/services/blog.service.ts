@@ -23,8 +23,10 @@ export class BlogService {
   public async modificarBlog(blog: Blog) {
     return await this.http.update("/api/blog", blog);
   }
-   //TODO
-  //AGREGAR EL UPDATE
+
+  public async obtenerPorId(idBlog){
+    return await this.http.get("/api/blog/?id=".concat(idBlog));
+  }
     
   
   /*

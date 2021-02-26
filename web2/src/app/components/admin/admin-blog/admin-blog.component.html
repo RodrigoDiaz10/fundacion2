@@ -31,12 +31,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let blog of blogs;  let id=index">
+              <tr *ngFor="let b of blog ;  let id=index">
                 <th scope="row">{{id+1}}</th>
-                <td>{{blog.title}}</td> 
-                <td>{{blog.date}}</td>
+                <td>{{b.blog[1].title}}</td> 
+                <td>{{b.blog[1].updated_at}}</td> 
                 <td>
-                  <button type="button" class="btn btn-outline-primary">
+                  <button (click)="detalles()" type="button" class="btn btn-outline-primary">
                     <i class="far fa-edit"></i>
                   </button>
                 </td>
@@ -67,7 +67,7 @@
           </nav>
     </div>
   </div>
--->
+
 
 
 

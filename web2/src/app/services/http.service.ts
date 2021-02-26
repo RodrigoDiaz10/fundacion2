@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class HttpService {
   rutaServidor = environment.baseUrl;
 
   constructor() { }
-  public async post(ruta: string, payload: any) {
+  public async post(ruta: string, payload: any): Promise<Observable<any>> {
     const respuestaRaw = await fetch(this.rutaServidor + ruta, {
       body: JSON.stringify(payload),
       headers: {
